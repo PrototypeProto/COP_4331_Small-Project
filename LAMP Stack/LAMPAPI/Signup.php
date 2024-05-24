@@ -2,20 +2,19 @@
 
 	$inData = getRequestInfo();
 
-	$firstName = $inData["firstName"];
-    $lastName = $inData["lastName"];
-    $login = $inData["login"];
-    $password = $inData["password"];
+	$firstName = $inData["FirstName"];
+    $lastName = $inData["LastName"];
+    $login = $inData["Login"];
+    $password = $inData["Password"];
 
 	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
 	if ($conn->connect_error)
 	{
-		returnWithError( $conn->connect_error );
+		returnWithError($conn->connect_error);
 	}
 	else
 	{
-		$sql = "SELECT * FROM Users WHERE Login=?";
-		$stmt = $conn->prepare($sql);
+		$stmt = $conn->prepare("SELECT * FROM Users WHERE Login = ?");
 		$stmt->bind_param("s", $login);
 		$stmt->execute();
 		$result = $stmt->get_result();
@@ -25,14 +24,12 @@
 			$stmt = $conn->prepare("INSERT into Users (FirstName, LastName, Login, Password) VALUES(?,?,?,?)");
 			$stmt->bind_param("ssss", $firstName, $lastName, $login, $password);
 			$stmt->execute();
-			$id = $conn->insert_id;
 			$stmt->close();
 			$conn->close();
 			http_response_code(200);
-			$searchResults .= '{'.'"id": "'.$id.''.'"}';
-
-			returnWithInfo($searchResults);
-		} else {
+		}
+		else
+		{
 			http_response_code(409);
 			returnWithError("Username taken");
 		}
@@ -43,18 +40,19 @@
 		return json_decode(file_get_contents('php://input'), true);
 	}
 
-	function sendResultInfoAsJson( $obj )
+	function sendResultInfoAsJson($obj)
 	{
 		header('Content-type: application/json');
 		echo $obj;
 	}
 
-	function returnWithError( $err )
+	function returnWithError($err)
 	{
 		$retValue = '{"error":"' . $err . '"}';
-		sendResultInfoAsJson( $retValue );
+		sendResultInfoAsJson($retValue);
 	}
-	function returnWithInfo( $searchResults )
+	
+	function returnWithInfo($searchResults)
 	{
 		$retValue = '{"results":[' . $searchResults . '],"error":""}';
 		sendResultInfoAsJson( $retValue );
