@@ -20,7 +20,7 @@
 		$result = $stmt->get_result();
 		if($row = $result->fetch_assoc())
 		{
-			returnWithInfo($row['ID'], $row['FirstName'], $row['LastName']);
+			returnWithInfo($row['FirstName'], $row['LastName'], $row['ID']);
 		}
 		else
 		{
