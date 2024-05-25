@@ -2,11 +2,11 @@
 
     $inData = getRequestInfo();
     
-    $userId = $inData["UserID"];
-    $firstName = $inData["FirstName"];
-    $lastName = $inData["LastName"];
-    $email = $inData["Email"];
-    $phone = $inData["Phone"];
+    $UserID = $inData["UserID"];
+    $FirstName = $inData["FirstName"];
+    $LastName = $inData["LastName"];
+    $Email = $inData["Email"];
+    $Phone = $inData["Phone"];
 
     $conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
     if ($conn->connect_error) 
@@ -22,7 +22,7 @@
             exit();
         }
         
-        $stmt->bind_param("s", $phone);
+        $stmt->bind_param("s", $Phone);
         $stmt->execute();
         $result = $stmt->get_result();
         $rows = $result->num_rows;
@@ -36,7 +36,7 @@
                 exit();
             }
             
-            $stmt->bind_param("issss", $userId, $firstName, $lastName, $email, $phone);
+            $stmt->bind_param("issss", $UserID, $FirstName, $LastName, $Email, $Phone);
             $stmt->execute();
             $stmt->close();
             $conn->close();
