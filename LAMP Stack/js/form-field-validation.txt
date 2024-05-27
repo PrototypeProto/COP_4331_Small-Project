@@ -1,0 +1,17 @@
+Form field validation for Group 9's project:
+
+Regex for login/signup usernames:
+/^[a-zA-z0-9]{3,32}$/
+
+login/signup passwords:
+/^([a-zA-Z0-9]|\!|\@|\#|\$|\%|\^|\&|\*){10,32}$/
+
+regex for emails
+/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+(from https://www.w3resource.com/javascript/form/email-validation.php)
+
+regex for phone numbers
+/^[0-9]{10}$/
+
+first/last names
+/^[a-zA-z]{1,50}$/
