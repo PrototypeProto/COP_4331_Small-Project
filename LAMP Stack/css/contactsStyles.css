@@ -1,0 +1,76 @@
+body
+{
+    padding-top: 70px;
+}
+
+.search-form
+{
+    /* border: 1px solid grey; */
+    border-style: outset;
+    border-color: black;
+    border-radius: 30px;
+    height: 50px;
+    width: 500px;
+    /* padding: 8px 10px; */
+    
+    display: flex;
+    /* gap: 170px;              Move thes search button to the right, but it may also have unintended affects not yet recognized */
+    margin: 0 auto;
+}
+
+.search-textbox
+{
+    /* border-style: outset;
+    border-color: black;
+    border-radius: 30px;
+
+    height: 30px;
+    width: 400px; */
+    /* align-self: center; */
+
+    padding: 0px 20px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    width: 400px;
+}
+
+/* gets rid of highlight around input. See if theres a better way to do this. */
+.search-bar:focus
+{
+    outline: none;
+}
+
+.search-btn
+{
+    background-color: transparent;
+    border: solid;
+    border-radius: 30px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.table-buttons
+{
+    gap: 10px;
+}
+
+.refresh-table-btn
+{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.add-contact-btn
+{
+    height: 50px;
+    width: 50px;
+
+    background-color: green;
+}
+
+h1
+{
+    
+}
