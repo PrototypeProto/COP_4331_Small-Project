@@ -7,7 +7,7 @@
 	$newLastName = $inData["LastName"];
 	$newEmail = $inData["Email"];
 	$newPhone = $inData["Phone"];
-    $favoriteStatus = $inData["Favorite"];
+    	$favoriteStatus = $inData["Favorite"];
 
 	$conn = new mysqli("localhost", "TheBeast", "WeLoveCOP4331", "COP4331");
 	if ($conn->connect_error)
@@ -16,12 +16,38 @@
 	}
 	else
 	{
-		$stmt = $conn->prepare("UPDATE Contacts SET FirstName = ?, LastName = ?, Email = ?, Phone = ?, Favorite = ? WHERE ID = ?");
-		$stmt->bind_param("ssssii", $newFirstName, $newLastName, $newEmail, $newPhone, $favoriteStatus, $id);
-		$stmt->execute();
-		$stmt->close();
-		$conn->close();
-		returnWithError("");
+		$stmt = $conn->prepare("SELECT * FROM Contacts WHERE Phone = ? and ID != ?");
+	        if ($stmt === false) {
+	            returnWithError($conn->error);
+	            $conn->close();
+	            exit();
+	        }
+	        
+	        $stmt->bind_param("si", $newPhone, $id);
+	        $stmt->execute();
+	        $result = $stmt->get_result();
+	        $rows = $result->num_rows;
+        
+        	if ($rows == 0)
+        	{
+            		$stmt = $conn->prepare("UPDATE Contacts SET FirstName = ?, LastName = ?, Email = ?, Phone = ?, Favorite = ? WHERE ID = ?");
+			if ($stmt === false) {
+				returnWithError($conn->error);
+				$conn->close();
+				exit();
+			}
+
+			$stmt->bind_param("ssssii", $newFirstName, $newLastName, $newEmail, $newPhone, $favoriteStatus, $id);
+			$stmt->execute();
+			$stmt->close();
+			$conn->close();
+			http_response_code(200);
+		}
+	        else
+	        {
+	            http_response_code(409);
+	            returnWithError("Duplicate contact");
+	        }
 	}
 
 	function getRequestInfo()
