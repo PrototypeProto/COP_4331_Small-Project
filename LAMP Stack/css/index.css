@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('../images/mountain.jpg'); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* button formatting */
+.btn {
+    color: #007D2F;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 2.3vw;
+    background:none;
+    border:none;
+    cursor: pointer;
+    padding:0.3em 1.2em;
+    margin:0.6em 0.3em 0.3em 0;
+    float: right;
+}
+.btn:hover {
+    color:#414545;
+}
+
+/* welcome text formatting */
+#title {
+    color: #000000;
+    font-family: 'Island Moments';
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 5vw;
+    text-align: center;
+    margin-bottom: auto;
+    display: block;
+    text-decoration-line: none;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 200px;
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: red;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight:500;
+
+}
+
+i {
+    font-size: 2em;
+    color: whitesmoke;
+    user-select: none;
+}
+
+/* For mobile devices */
+@media only screen and (max-width: 767px) {
+    body {
+        background-image: url('../images/backgroundmobile.png') ; 
+    }
+}
