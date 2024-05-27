@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/contactsStyles.css" rel="stylesheet">
+        <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+    </head>
+
+    <body>
+      
+      <!-- nav bar that contains a profile icon that will drop down current username to manager-->
+      <nav class="navbar navbar-expand-l bg-dark navbar-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand">
+            <img src="images/logo.png" alt="Logo" style="width:40px;" class="rounded-pill">
+          </a>
+          
+
+          <a class="navbar-brand ms-auto" href="#"> 
+            <img src="images/profileIcon.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> 
+          </a>
+
+        </div>
+      </nav>
+
+      <!-- Offcanvas Sidebar -->
+      <div class="offcanvas offcanvas-start" id="demo">
+        <div class="offcanvas-header">
+          <h1 class="offcanvas-title">Heading</h1>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <p>Some text lorem ipsum.</p>
+          <p>Some text lorem ipsum.</p>
+          <button class="btn btn-secondary" type="button">A Button</button>
+        </div>
+      </div>
+
+      <!-- Button to open the offcanvas sidebar -->
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+        Open Offcanvas Sidebar
+      </button>
+      <!-- <a href="#demo">
+        Open Offcanvas Sidebar
+      </a>
+       -->
+      <!-- <div class="d-flex justify-content-center align-items-center" 
+        style="background-image: url(./images/contactsBackground.png); height: 100vh;">
+      </div> -->
+      
+      <!-- if you want content to span full width of the page use container-fluid -->
+      <div class="container border">
+        <div class="row">
+          
+          <div class="col-4 border">
+            <p>Hello</p>
+          </div>
+        
+          <div class="col-4 border">
+            <h1 class="display-1 text-center">Contacts</h1>
+          </div>
+          
+          <div class="col-4">
+            <p>Hello</p>
+          </div>
+        </div>
+
+        <!-- Search bar and buttons row-->
+        <div class="row d-flex d-inline">
+          <div class="col border">
+            <p>left column</p>
+          </div>
+          
+          <div class="col border">
+            <!-- Search bar and button (just need to adjust page positioning)-->
+            <form class="d-flex search-form">
+              <input class="search-textbox" type="text" placeholder="Search Contacts..." name="search" />
+              <button class="search-btn">Search Icon</button> <!-- put magnifying glass icon here-->
+            </form>
+          </div>
+
+          <div class="col border">
+            <!-- still needs button icons-->
+            <form class="d-flex table-buttons">
+              <button class="refresh-table-btn">Refresh Icon</button>
+              <button class="add-contact-btn">Plus Icon</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="row">
+          <p>Put table here</p>
+          <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+              </tr>
+            </thead>
+            <tbody>
+              <td>Lebron</td>
+              <td>James</td>
+              <td>lakers@gmail.com</td>
+              <td>407-111-1111</td>
+            </tbody>
+            
+          </table>
+        </div>
+      </div>
+
+    </body>
+</html>
