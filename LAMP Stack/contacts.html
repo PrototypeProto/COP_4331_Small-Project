@@ -7,7 +7,7 @@
     </head>
 
     <body>
-      
+
       <!-- nav bar that contains a profile icon that will drop down current username to manager-->
       <nav class="navbar navbar-expand-l bg-dark navbar-dark fixed-top">
         <div class="container-fluid">
@@ -53,7 +53,7 @@
         <div class="row">
           
           <div class="col-4 border">
-            <p>Hello</p>
+            <p>Top left column</p>
           </div>
         
           <div class="col-4 border">
@@ -61,7 +61,7 @@
           </div>
           
           <div class="col-4">
-            <p>Hello</p>
+            <p>Top right column</p>
           </div>
         </div>
 
@@ -74,41 +74,54 @@
           <div class="col border">
             <!-- Search bar and button (just need to adjust page positioning)-->
             <form class="d-flex search-form">
-              <input class="search-textbox" type="text" placeholder="Search Contacts..." name="search" />
-              <button class="search-btn">Search Icon</button> <!-- put magnifying glass icon here-->
+              <input id="searchText" class="search-textbox" type="text" placeholder="Search Contacts..." name="search" />
+              <button class="search-btn" onclick="searchContacts()">Search Icon</button> <!-- put magnifying glass icon here-->
             </form>
           </div>
 
           <div class="col border">
             <!-- still needs button icons-->
             <form class="d-flex table-buttons">
-              <button class="refresh-table-btn">Refresh Icon</button>
+              <button class="refresh-table-btn" onclick="refreshContacts()">Refresh Icon</button>
               <button class="add-contact-btn">Plus Icon</button>
             </form>
           </div>
         </div>
 
-        <div class="row">
-          <p>Put table here</p>
-          <table class="table table-dark table-striped">
-            <thead>
-              <tr>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Email</th>
-                <th scope="col">Phone</th>
-              </tr>
-            </thead>
-            <tbody>
-              <td>Lebron</td>
-              <td>James</td>
-              <td>lakers@gmail.com</td>
-              <td>407-111-1111</td>
-            </tbody>
-            
-          </table>
-        </div>
       </div>
 
+      <div class="container-fluid border">
+        <div class="row d-flex">
+          <div class="col-1 border">HERE</div>
+          <div class="col-10 border">
+            <p>Put table here</p>
+            <table class="table table-dark table-striped table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Phone</th>
+                </tr>
+              </thead>
+              <tbody>
+                <td>1</td>
+                <td>Lebron</td>
+                <td>James</td>
+                <td>lakers@gmail.com</td>
+                <td>407-111-1111</td>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-1 border d-flex">
+            <form>
+              <button class="edit-contact-btn">Stylus Icon</button>
+              <button class="delete-contact-btn">Trashcan Icon</button>
+            </form>
+          </div>
+        </div>
+      </div>        
+    
     </body>
 </html>
