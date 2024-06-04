@@ -39,6 +39,29 @@ body {
     left: 40px;
     font-size: 32px;
 }
+.tooltip{
+    position: relative;
+}
+.tooltip .tooltiptext{
+    top: 100%;
+    left: 50%;
+    margin-left: -175px;
+    visibility: hidden;
+    width: 350px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-size: 16px;
+    
+    
+    position: absolute;
+    z-index: 1;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 i {
     font-size: 40px;
     color: black;
@@ -70,7 +93,7 @@ header {
 h2{
     color: whitesmoke;
     font-size: 3em;
-    margin-left: -800px;
+    margin-left: -670px;
 }
 
 .wrapper {
