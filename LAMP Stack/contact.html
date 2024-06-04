@@ -19,10 +19,10 @@
             <img src="images/logo.png" alt="Logo" style="width:40px;" class="rounded-pill">
           </a>
           
-          <a class="navbar-brand ms-auto" href="#"> 
-            <span class="navbar-text text-white">Welcome User!</span>
+          <!-- <a class="navbar-brand ms-auto" href="#">  -->
             <!-- <img src="" alt="Welcome User!" style="width:40px;" class="rounded-pill">  -->
-          </a>
+          <span class="text-white">Welcome User!</span>
+          <!-- </a> -->
 
         </div>
       </nav> 
@@ -83,11 +83,10 @@
                   <!-- <div class="col justify-content-center  input-group d-flex search-bar"> -->
                   <div class="col justify-content-center search-bar">
 
-                    <input type="text" class="" placeholder="Search Contacts..." id="searchText"> 
-                    <button class="" type="button" id="searchContact">
+                    <input type="text" class="" placeholder="Search Contacts..." name="search"> 
+                    <button class="" type="button" id="searchContact" onclick="searchContact()">
                       <i class="fa fa-search fa-xl"></i>
                     </button>
-                    <span id="contactSearchResult"></span>
 
                     <!-- <input type="text" class="search-textbox" placeholder="Search Contacts..." name="search"> 
                     <button class="search-btn" type="button" id="searchContact" onclick="searchContact()">
@@ -114,7 +113,7 @@
                 
               <div class="row mt-3">
                 <div id="contactsTable">
-                  <table id="cTable" class="table table-dark table-striped table-hover" style="background-color: rgba(0, 0, 0, 0);">
+                  <table id="cTable" class="table table-dark table-striped table-hover">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
