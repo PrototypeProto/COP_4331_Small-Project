@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Contacts Page</title>
+        <meta charset="UTF-8">
+        
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/contactsStyles.css" rel="stylesheet">
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    </head>
+
+    <body id="body">
+
+      <!-- nav bar that contains a profile icon that will drop down current username to manager -->
+      <nav class="navbar navbar-expand-l bg-dark navbar-dark fixed-top navbar-border">
+        <div class="container-fluid">
+          <a class="navbar-brand">
+            <img src="images/logo.png" alt="Logo" style="width:40px;" class="rounded-pill">
+          </a>
+          
+          <a class="navbar-brand ms-auto" href="#"> 
+            <span class="navbar-text text-white">Welcome User!</span>
+            <!-- <img src="" alt="Welcome User!" style="width:40px;" class="rounded-pill">  -->
+          </a>
+
+        </div>
+      </nav> 
+
+      <!-- Container for the Main Content -->
+      <div class="container-fluid full-height">
+        <div class="row">
+          <div class="col-1 bg-dark left-side-border"></div>
+
+          <div id="mainContent" class="col-10 bg-image" style="background-image: url(images/clouds.png); height: 100vh">
+
+            <h1 class="display-1 text-center mt-3">Contacts</h1>
+
+            <!-- Code Block for Contact Form (usually hidden) -->
+            <div class="row justify-content-center">
+              <!-- <form class="d-none bg-image" style="background-image: url(images/pigeons.png);" id="addContact" method="post"> -->
+              <form class="d-none" id="addContact" method="post">
+                <div class="mb-2 mt-2">
+                  <p>Enter the contact's information in the below fields:</p>
+                </div>
+      
+                <div class="mb-4 mt-4">
+                  <label for="newContactFirstName">First name:</label>
+                  <input type="text" class="form-control" id="newContactFirstName" placeholder="First Name" required>
+                </div>
+                
+                <div class="mb-4 mt-4">
+                  <label for="newContactLastName">Last name:</label>
+                  <input type="text" class="form-control" id="newContactLastName" placeholder="Last Name" required>
+                </div>
+                
+                <!-- not sure if we should require since nobody remembers phone numbers or emails-->
+                <div class="mb-4 mt-4">
+                  <label for="newContactEmail">Email address:</label>
+                  <input type="text" class="form-control" id="newContactEmail" placeholder="name@email.com">
+                </div>
+                
+                <div class="mb-4 mt-4">
+                  <label for="newContactPhoneNumber">Phone number:</label>
+                  <input type="text" class="form-control" id="newContactPhoneNumber" placeholder="XXX-XXX-XXXX">
+                </div>
+                
+                <div class="d-flex justify-content-center">
+                  <button id="cancelBtn" class="btn btn-danger me-4" type="button">Cancel</button>
+                  <button id="submitContactFormBtn" class="btn btn-success" type="button">Done</button> <!-- can change to submit for accessibility -->
+                </div>
+                
+              </form>
+            </div>
+              
+            <div id="searchbar-and-table" class="">
+              <div id="searchBar" class="">
+
+                <!-- Search bar and buttons row-->
+                <div class="row mt-5 d-flex d-inline">
+                  <div class="col"></div>
+                  
+                  <!-- <div class="col justify-content-center  input-group d-flex search-bar"> -->
+                  <div class="col justify-content-center search-bar">
+
+                    <input type="text" class="" placeholder="Search Contacts..." id="searchText"> 
+                    <button class="" type="button" id="searchContact">
+                      <i class="fa fa-search fa-xl"></i>
+                    </button>
+                    <span id="contactSearchResult"></span>
+
+                    <!-- <input type="text" class="search-textbox" placeholder="Search Contacts..." name="search"> 
+                    <button class="search-btn" type="button" id="searchContact" onclick="searchContact()">
+                      <i class="fa fa-search fa-xl"></i>
+                    </button> -->
+                  </div>
+        
+                  <div class="col">
+                    <form class="d-flex table-buttons">
+                      
+                      <button class="refresh-table-btn" id="refresh" type="button" onclick="loadContacts()">
+                        <i class="fa fa-refresh fa-2xl"></i>
+                      </button>
+            
+                      <!-- Has id newContact for event listener, the event is click for the button-->
+                      <button class="add-contact-btn" id="newContact" type="button">
+                        <i class="fa fa-user-plus fa-xl"></i><span style="padding-left: 20px;">Add Contact</span>
+                      </button>
+                      
+                    </form>
+                  </div>
+                </div>
+              </div>
+                
+              <div class="row mt-3">
+                <div id="contactsTable">
+                  <table id="cTable" class="table table-dark table-striped table-hover" style="background-color: rgba(0, 0, 0, 0);">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Favorite</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <!-- Dynamically added rows will go here -->
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>      
+      
+          <div class="col-1 bg-dark right-side-border"></div>
+        
+        </div>
+
+      </div>
+      <script type="text/javascript" src="js/contacts.js"></script>
+    </body>
+</html>
