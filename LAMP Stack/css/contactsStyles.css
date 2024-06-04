@@ -1,38 +1,148 @@
-body
+
+.navbar-text
+{
+    font-size: x-large;
+}
+
+.left-side-border
+{
+    border-style: solid;
+    /* border-width: 2px; */
+    /* border-top: 2px; */
+    /* border-right: 2px; */
+    border-left: 0;
+    border-bottom: 0; 
+    border-color: #d3d3d3;
+}
+
+.right-side-border
+{
+    border-style: solid;
+    /* border-top: 1px; */
+    /* border-left: 1px; */
+    border-bottom: 0;
+    border-right: 0;
+    border-color: lightgray;
+}
+
+.navbar-border
+{
+    border-style: solid;
+    border-width: 2px;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-color: lightgray;
+}
+
+#mainContent
 {
     padding-top: 70px;
+}
+
+#searchText
+{
+	font-size: 30px;
+}
+
+.bg-image
+{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#newContactFirstName
+{}
+
+#newContactLastName
+{}
+
+#newContactEmail
+{
+}
+
+#newContactPhoneNumber
+{}
+
+#searchBar
+{}
+
+#submitContactFormBtn
+{}
+
+#cTable
+{
+    border-style: solid;
+    border-color: lightgray;
 }
 
 .search-form
 {
     /* border: 1px solid grey; */
-    border-style: outset;
-    border-color: black;
-    border-radius: 30px;
+    /* border-style: solid; */
+    /* border-color: black; */
+    /* border-radius: 30px;
     height: 50px;
-    width: 500px;
+    width: 500px; */
     /* padding: 8px 10px; */
     
-    display: flex;
     /* gap: 170px;              Move thes search button to the right, but it may also have unintended affects not yet recognized */
     margin: 0 auto;
+
+    
+}
+
+.search-bar
+{
+    border-radius: 30px;
+    /* overflow: hidden; caused the bar to get "eaten" when the page was shrunken*/ 
+    display: flex;
+
+}
+
+.search-bar input
+{
+    border: outset;
+    outline: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    width: 500px;
+    padding: 0px 20px;
+
+    /* flex: 1; */
+    border-color:black;
+}
+
+.search-bar button
+{
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    width: 100px;
+
+    border: outset;
+    border-color: black;
+
+    background-color: lightskyblue;
+    cursor: pointer;
+    margin: 0;
+
+    flex-shrink: 0;
 }
 
 .search-textbox
 {
-    /* border-style: outset;
-    border-color: black;
-    border-radius: 30px;
-
-    height: 30px;
-    width: 400px; */
-    /* align-self: center; */
-
     padding: 0px 20px;
     border-radius: 30px;
     border: none;
     outline: none;
-    width: 400px;
+    width: 500px;
+
+    border-style: outset;
+    border-right: 0;
+    border-color:black;
+
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 /* gets rid of highlight around input. See if theres a better way to do this. */
@@ -43,16 +153,18 @@ body
 
 .search-btn
 {
-    background-color: transparent;
-    border: solid;
+    background-color: lightskyblue;
+    border: outset;
     border-radius: 30px;
+    width: 100px;
     margin: 0;
     cursor: pointer;
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .table-buttons
 {
-    gap: 10px;
+    gap: 30px;
 }
 
 .refresh-table-btn
@@ -60,17 +172,82 @@ body
     height: 50px;
     width: 50px;
     border-radius: 50%;
+    border-style: outset;
+    padding: 0;
+    background-color: white;
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+
 
 .add-contact-btn
 {
     height: 50px;
-    width: 50px;
-
-    background-color: green;
+    width: 300px;
+    border-radius: 10px;
+    border-style: outset;
+    background-color: white;
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-h1
+.add-contact-btn img 
 {
+    height: 40px;
+    width: 40px;
+}
+
+.edit-contact-btn
+{
+    width: 50px;
+}
+
+.delete-contact-btn
+{
+    width: 50px;
+}
+
+#newContact
+{
+    /* gap: 20px; */
+}
+
+#contactsTable
+{
+}
+
+#addContact
+{
+    height: 1000px;
+    width: 500px;
     
+    border-style: solid;
+    border-color: black;
+
+
+    /* background-color: rgba(0, 0, 0, 0.6); */
+
+    margin: 0;
+
+    backdrop-filter: blur(10px);
+}
+
+
+#addContact input
+{
+    border-style: solid;
+    border-color: black;
+}
+
+#addContact:focus
+{
+    outline: none;
+}
+
+.full-height
+{
+    height: 100vh;
+}
+
+#cancelBtn
+{
+
 }
