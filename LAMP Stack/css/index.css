@@ -1,6 +1,7 @@
 * {
-    margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "Bebas Neue", sans-serif;
 }
 
 body {
@@ -8,7 +9,11 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     background-size: cover;
+    
 }
 .bebas-neue-regular {
     font-family: "Bebas Neue", sans-serif;
@@ -16,35 +21,24 @@ body {
     font-style: normal;
 }
 
-/* button formatting */
-.btn {
-    color: #007D2F;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: bolder;
-    font-size: 2.3vw;
-    background:none;
-    border:none;
-    cursor: pointer;
-    padding:0.3em 1.2em;
-    margin:0.6em 0.3em 0.3em 0;
-    float: right;
-}
+
 .btn:hover {
-    color:#414545;
+    background-color:#ffffff;
+    transform: scale(1.02);
 }
 
-/* welcome text formatting */
-#title {
-    color: #000000;
-    font-family: 'Island Moments';
-    font-style: normal;
-    font-weight: bolder;
-    font-size: 5vw;
-    text-align: center;
-    margin-bottom: auto;
-    display: block;
-    text-decoration-line: none;
+
+.btn {
+    margin-left: 40px;
+    font-size: 1.1em;
+    outline: none;
+    text-decoration: none;
+    font-weight: 500;
+    width: 130px;
+    height: 50px;
+    background: whitesmoke;
+    border: 2px solid whitesmoke;
+    border-radius: 6px;
 }
 
 header {
@@ -52,12 +46,19 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 200px;
+    padding: 20px 100px;
     z-index: 99;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: red;
+    background: transparent;
+    border: 2px solid whitesmoke;
+}
+
+h2{
+    color: whitesmoke;
+    font-size: 3em;
+    margin-left: -900px;
 }
 
 .navigation a {
@@ -65,19 +66,27 @@ header {
     font-size: 1.1em;
     color: whitesmoke;
     text-decoration: none;
-    font-weight:500;
-
+    font-weight: 500;
+    margin-left:40px;
 }
 
 i {
-    font-size: 2em;
+    font-size: 40px;
     color: whitesmoke;
-    user-select: none;
 }
 
-/* For mobile devices */
-@media only screen and (max-width: 767px) {
-    body {
-        background-image: url('../images/backgroundmobile.png') ; 
-    }
+.wrapper {
+    width: 420px;
+    height: 440px;
+    color: whitesmoke;
+    border-radius: 10px;
+    padding: 30px 40px;
+    background: transparent;
+    border: 2px solid whitesmoke;
+    backdrop-filter: blur(40px);
+    border-radius: 10px;
+    padding: 30px 40px;
+    position: relative;
+    transition: height .2s ease;
+    overflow: hidden;
 }
